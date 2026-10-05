@@ -3,68 +3,95 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-<title>联系作者 · JSNU洗衣雷达</title>
+<title>JSNU 洗衣雷达 · 获取最新版 / 联系作者</title>
+<meta name="description" content="JSNU 洗衣雷达 —— 基于海乐生活校园洗衣平台的宿舍洗衣机空闲雷达。获取最新版 APK、查看开源仓库、联系作者。" />
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-  html, body { height: 100%; }
+  html, body { min-height: 100%; }
   body {
-    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Comic Sans MS", cursive, sans-serif;
     background: linear-gradient(160deg, #0ea5a4 0%, #14b8a6 55%, #2dd4bf 100%);
     display: flex; align-items: center; justify-content: center;
-    padding: 24px; color: #0f2e2c;
+    padding: 20px; color: #0f2e2c;
   }
   .card {
-    width: 100%; max-width: 380px; background: #ffffff; border-radius: 22px;
-    padding: 32px 26px 28px; text-align: center;
+    width: 100%; max-width: 400px; background: #ffffff; border-radius: 24px;
+    padding: 22px 22px 20px; text-align: center;
     box-shadow: 0 18px 50px rgba(0, 60, 55, .28);
   }
-  .logo { font-size: 46px; line-height: 1; }
-  h1 { font-size: 21px; margin-top: 12px; color: #0b3b39; letter-spacing: .5px; }
-  .sub { font-size: 14px; color: #5b7a77; margin-top: 10px; line-height: 1.6; }
-  .qq {
-    margin: 18px auto 0; width: fit-content; font-size: 26px; font-weight: 700;
-    letter-spacing: 1px; color: #0ea5a4; background: #e8faf8;
-    padding: 8px 20px; border-radius: 12px;
-  }
+  .hero { width: 100%; border-radius: 16px; display: block; margin-bottom: 6px; }
+  .logo { font-size: 44px; line-height: 1; margin-top: 4px; }
+  h1 { font-size: 22px; margin-top: 10px; color: #0b3b39; letter-spacing: .5px; }
+  .sub { font-size: 13.5px; color: #5b7a77; margin-top: 8px; line-height: 1.6; }
+  .sec { margin-top: 20px; text-align: left; }
+  .sec-title { font-size: 13px; font-weight: 700; color: #0ea5a4; margin-bottom: 8px; letter-spacing: .4px; }
   .btn {
-    display: block; width: 100%; margin-top: 22px; height: 50px; line-height: 50px;
-    border-radius: 14px; font-size: 17px; font-weight: 600; text-decoration: none;
-    border: none; cursor: pointer;
+    display: block; width: 100%; margin-top: 10px; min-height: 48px; line-height: 48px;
+    border-radius: 14px; font-size: 16px; font-weight: 600; text-decoration: none;
+    border: none; cursor: pointer; text-align: center;
   }
   .btn.primary { background: linear-gradient(135deg, #0ea5a4, #14b8a6); color: #fff; }
   .btn.primary:active { opacity: .88; }
-  .btn.ghost { background: #f1f6f5; color: #0b7a76; margin-top: 12px; }
+  .btn.ghost { background: #f1f6f5; color: #0b7a76; }
   .btn.ghost:active { background: #e3eeed; }
-  .tip { margin-top: 18px; font-size: 12.5px; color: #8aa5a2; line-height: 1.7; }
+  .qq {
+    margin: 10px auto 0; width: fit-content; font-size: 24px; font-weight: 700;
+    letter-spacing: 1px; color: #0ea5a4; background: #e8faf8;
+    padding: 8px 20px; border-radius: 12px;
+  }
+  .tip { margin-top: 18px; font-size: 12px; color: #8aa5a2; line-height: 1.7; text-align: left; }
+  .badges { display: flex; gap: 8px; justify-content: center; margin-top: 12px; flex-wrap: wrap; }
+  .badge { font-size: 11px; color: #0b7a76; background: #e8faf8; padding: 4px 10px; border-radius: 999px; }
 </style>
 </head>
 <body>
   <div class="card">
-    <div class="logo">🧺</div>
+    <img class="hero" alt="JSNU 洗衣雷达"
+         src="https://cdn.jsdelivr.net/gh/xm2284/jsnu-laundry-radar@main/assets/hero.svg"
+         onerror="this.style.display='none'; document.getElementById('emojiLogo').style.display='block';" />
+    <div class="logo" id="emojiLogo" style="display:none">🧺</div>
     <h1>JSNU 洗衣雷达</h1>
-    <p class="sub">获取最新版本 / 反馈问题<br />请添加作者 QQ（小明同学）</p>
-    <div class="qq">2284517861</div>
+    <p class="sub">基于「海乐生活」校园洗衣平台的宿舍洗衣机空闲雷达<br>实时状态 · 蹲守通知 · 洗完提醒 · 桌面小组件</p>
+    <div class="badges">
+      <span class="badge">Android</span>
+      <span class="badge">Kotlin</span>
+      <span class="badge">Jetpack Compose</span>
+      <span class="badge">MIT</span>
+    </div>
 
-    <!-- href 直接是 QQ 资料卡协议（card_type=person：打开资料卡→可直接加好友，不走临时会话） -->
-    <a class="btn primary"
-       href="mqqapi://card/show_pslcard?src_type=internal&amp;version=1&amp;uin=2284517861&amp;card_type=person&amp;source=sharecard">
-      ＋ 添加作者 QQ
-    </a>
-    <button class="btn ghost" id="copyBtn" type="button">复制 QQ 号</button>
+    <div class="sec">
+      <div class="sec-title">获取最新版</div>
+      <a class="btn primary" href="https://github.com/xm2284/jsnu-laundry-radar/releases/latest">⬇ 下载最新版 APK</a>
+      <a class="btn primary" style="background:#12b886"
+         href="https://gitee.com/xm2284/jsnu-laundry-radar/releases/latest">⬇ 下载（Gitee 镜像）</a>
+      <a class="btn ghost" href="https://github.com/xm2284/jsnu-laundry-radar#readme">📖 使用说明 / 常见问题</a>
+    </div>
 
-    <p class="tip" id="tip">页面会尝试自动打开 QQ；若被浏览器拦截，请点上方按钮。<br />未安装 QQ 时请先安装手机 QQ。</p>
+    <div class="sec">
+      <div class="sec-title">开源仓库</div>
+      <a class="btn ghost" href="https://github.com/xm2284/jsnu-laundry-radar">GitHub · xm2284/jsnu-laundry-radar</a>
+      <a class="btn ghost" href="https://gitee.com/xm2284/jsnu-laundry-radar">Gitee 镜像 · xm2284/jsnu-laundry-radar</a>
+    </div>
+
+    <div class="sec">
+      <div class="sec-title">联系作者 · 反馈问题</div>
+      <div class="qq">2284517861</div>
+      <a class="btn primary"
+         href="mqqapi://card/show_pslcard?src_type=internal&amp;version=1&amp;uin=2284517861&amp;card_type=person&amp;source=sharecard">
+        ＋ 添加作者 QQ（小明同学）
+      </a>
+      <button class="btn ghost" id="copyBtn" type="button">复制 QQ 号</button>
+    </div>
+
+    <p class="tip">
+      · 关于下载：若暂无 Release 附件，请添加作者 QQ 直接获取安装包。<br>
+      · 本 App 仅只读海乐生活公开设备状态接口，不登录、不代下单、不代支付；状态仅存本机。<br>
+      · 本项目为第三方非官方工具，与海乐生活 / 海尔及校方无隶属关系；仅用于学习与个人使用。
+    </p>
   </div>
 
 <script>
   var QQ = "2284517861";
-  // 资料卡（加好友）协议，按可靠性排序
-  var SCHEMES = [
-    "mqqapi://card/show_pslcard?src_type=internal&version=1&uin=" + QQ + "&card_type=person&source=sharecard",
-    "mqqapi://card/show_pslcard?uin=" + QQ
-  ];
-  // 进入页面后自动尝试一次（部分手机浏览器会拦截自定义协议，拦截时用户可再点按钮）
-  setTimeout(function () { window.location.href = SCHEMES[0]; }, 600);
-
   document.getElementById("copyBtn").addEventListener("click", function () {
     var btn = this;
     function ok() { btn.textContent = "已复制 ✓"; setTimeout(function () { btn.textContent = "复制 QQ 号"; }, 1500); }
